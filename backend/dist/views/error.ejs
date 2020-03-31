@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filing Findings - No Result</title>
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/> -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <link rel="stylesheet" href="/static/css/bootstrap.css" />
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="icon" type="image/png" href="/static/images/filling/tab_icon.png" sizes="32x32">
+  <style>
+    .bold {
+      font-weight: bold !important;
+    }
+
+    .active_link {
+      background-color: transparent !important;
+      border: 2px solid #6a0008 !important;
+      /* color: #ddd !important; */
+    }
+
+    .active_link:active {
+      background-color: transparent !important;
+      border: 2px solid #6a0008 !important;
+      /* color: #ddd !important; */
+    }
+
+    .active_link:focus {
+      background-color: transparent !important;
+      border: 2px solid #6a0008 !important;
+      /* color: #ddd !important; */
+    }
+
+    .shadow {
+      box-shadow: 0 -0.0055rem 0.5rem rgba(0, 0, 0, 0.3) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar navbar-default mb-0 fixed_nav" style="z-index: 1000;" role="navigation">
+    <div class="container-fluid limited">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <img src="/static/images/filling/title_icon.png" class="title-logo" />
+          FilingFindings™
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse anonymous-navbar-collapse" id="navbar-collapse">
+        <div id="entity-search-form-container" data-style-variant="navbar" data-initial-value="" data-autofocus="true">
+          <form onsubmit="return false;" name="search" class="navbar-form focus search">
+            <div class="input-group text-left">
+              <input id="searchBox" class="form-control search-autocomplete" name="ticker" size="40"
+                placeholder="Ticker or company name" autocomplete="off" autocorrect="off" autocapitalize="off"
+                autofocus="" />
+              <input type="hidden" name="type" value="CIK">
+              <span class="input-group-btn"><button class="btn btn-default" type="submit">
+                  <img src="static/images/icons/red-5.png" style="width:18px;height:18px;padding:0;margin:0;" />
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="container result_main" style="padding-top: 15vh;">
+    <!-- Search result name -->
+    <h3 class="text-center">There were no matches found for '<%- ticker %>'</h3>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    function autocomplete(inp, companies, ticker) {
+      /*the autocomplete function takes two arguments,
+      the text field element and an array of possible autocompleted values:*/
+      var currentFocus;
+      /*execute a function when someone writes in the text field:*/
+      inp.addEventListener("input", function (e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false; }
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*filter array possibilities*/
+        var newArr = companies.filter(c => { return c.toUpperCase().startsWith(val.toUpperCase()) });
+        /*for each item in the array...*/
+        for (i = 0; i < 7; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (newArr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML = "<strong>" + newArr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += newArr[i].substr(val.length);
+            /*insert a input field that will hold the current newArray item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + newArr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function (e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+      });
+      /*execute a function presses a key on the keyboard:*/
+      inp.addEventListener("keydown", function (e) {
+        var t = document.getElementById(this.id);
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (t && e.keyCode == 13) return;
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+      });
+      function addActive(x) {
+        /*a function to classify an item as "active":*/
+        if (!x) return false;
+        /*start by removing the "active" class on all items:*/
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        /*add class "autocomplete-active":*/
+        x[currentFocus].classList.add("autocomplete-active");
+      }
+      function removeActive(x) {
+        /*a function to remove the "active" class from all autocomplete items:*/
+        for (var i = 0; i < x.length; i++) {
+          x[i].classList.remove("autocomplete-active");
+        }
+      }
+      function closeAllLists(elmnt) {
+        /*close all autocomplete lists in the document,
+        except the one passed as an argument:*/
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+          if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+          }
+        }
+      }
+      /*execute a function when someone clicks in the document:*/
+      document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+      });
+    }
+
+    /*An array containing companies:*/
+    var companies = [];
+    var ticker = [];
+    $.get('/static/text/data.txt', function (data) {
+      var dataArray = data.split('\n');
+      for (var i = 0; i < dataArray.length; i++) {
+        companyArray = dataArray[i].split('	');
+        companies.push(companyArray[1].trim());
+        ticker.push(companyArray[0].trim());
+      }
+    }, 'text');
+
+    autocomplete(document.getElementById("searchBox"), companies, ticker);
+
+    $('.search').on('submit', function (value) {
+      var x = document.forms["search"]["ticker"].value;
+      var uri = location.protocol + "//" + location.host;
+      if (companies.includes(document.forms["search"]["ticker"].value)) {
+        var i = companies.indexOf(document.forms["search"]["ticker"].value);
+        window.location.href = uri + "/result?ticker=" + ticker[i] + "&type=CIK";
+      } else {
+        window.location.href = uri + "/result?ticker=" + document.forms["search"]["ticker"].value + "&type=CIK";
+      }
+    });
+  </script>
+</body>
+
+</html>

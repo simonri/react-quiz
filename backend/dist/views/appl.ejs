@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Filing Findings</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+  <link rel="stylesheet" href="/static/css/boostrap.css" />
+  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="icon" type="image/png" href="/static/images/filling/tab_icon.png" sizes="32x32">
+  <style>
+    .bold {
+      font-weight: bold !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar navbar-default mb-0 fixed_nav" style="z-index: 1000;" role="navigation">
+    <div class="container-fluid limited">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <img src="/static/images/filling/title_icon.png" class="title-logo" />
+          FilingFindings™
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span><span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse anonymous-navbar-collapse" id="navbar-collapse">
+        <div id="entity-search-form-container" data-style-variant="navbar" data-initial-value="" data-autofocus="true">
+          <form class=" navbar-form focus" action="/result" method="get" spellcheck="false" role="search">
+            <div class="input-group">
+              <input type="search" class="form-control search-autocomplete" name="ticker" size="40"
+                placeholder="Ticker or company name" autocomplete="off" autocorrect="off" autocapitalize="off"
+                autofocus="" /><span class="input-group-btn"><button class="btn btn-default" type="submit">
+                  <img src="/static/images/icons/red-5.png"
+                    style="width:18px;height:18px;padding:0;margin:0;" /></button></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section style="padding-top:10rem">
+      <h1 class="text-primary text-center">APPL</h1>
+      <br><br>
+
+      <ul id="filters" class="nav nav-pills nav-justified mt-5">
+        <li class="nav-item">
+          <a class="nav-link bold active" href="#">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">Financial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">Ownership</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">Proxies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">Prospectuses & Registerations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bold" href="#">Other</a>
+        </li>
+      </ul>
+    </section>
+
+    <section style="margin-top: 5rem;">
+      <div class="list-group">
+        <% data_to_render.forEach(function(line){ %>
+        <a href="#" class="list-group-item list-group-item-action"
+          style="padding:1rem 1.5rem; margin-bottom: 1.2rem;z-index: -5;">
+          <div class="row">
+            <div class="col-md-1 bold text-primary" style="border-right: 2px solid #b5b5b5"><%- line[0] %></div>
+            <div class="col-md-9 bold text-primary" style="padding-left: 4rem;"><%- line[1] %></div>
+            <div class="col-md-2 bold text-primary text-right"><%- line[2] %> <i class="fas fa-chevron-right"
+                style="color:#b5b5b5; padding-left:.5rem"></i></div>
+          </div>
+        </a>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script>
+
+    // Select filter
+    document.getElementById('filters').querySelectorAll('a').forEach(filter => {
+      filter.addEventListener('click', () => {
+        console.log(123)
+      })
+    })
+
+  </script>
+</body>
+
+</html>

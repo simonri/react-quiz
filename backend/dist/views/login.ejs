@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("partials/head") %>
+</head>
+
+<body>
+  <%- include("partials/navbar") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <a class="form-logo" href="">
+
+        </a>
+        <h2>Log In</h2>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form method="POST" action="/auth/login">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input autocomplete="username email" autofocus="" class="form-control" id="email" name="email" size="50"
+                  type="email" value="">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input autocomplete="current-password" class="form-control" id="password" name="password" size="50"
+                  type="password" value="">
+                <p class="help-block"><a href="forgot_password">Forgot your password?</a></p>
+              </div>
+              <button class="btn btn-success" type="submit">Log in</button>
+            </form>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p class="only-child">Don't have an account? <a href="register">Register now.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("partials/footer") %>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<div class="navbar navbar-default navbar-seamless navbar-seamless navbar-marketing" role="navigation">
+  <div class="container-fluid limited">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        FilingFindings™
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse anonymous-navbar-collapse" id="navbar-collapse">
+
+      <div id="entity-search-form-container" data-style-variant="navbar" data-initial-value="" data-autofocus="true">
+        <form class="navbar-form focus" action="/result/" method="get" spellcheck="false" role="search">
+          <div class="input-group">
+            <input id="myInput" type="search" class="form-control search-autocomplete" name="ticker" size="40"
+              placeholder="Ticker or company name" autocomplete="off" autocorrect="off" autocapitalize="off"
+              autofocus="">
+            <input type="hidden" name="type" value="CIK">
+            <span class="input-group-btn"><button class="btn btn-default" type="submit">
+                <img src="/static/images/icons/red-5.png" style="width:18px;height:18px;padding:0;margin:0;">
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="/pricing">Pricing</a></li>
+
+        <li class="hide-navbar-small"><a href="/contact">Contact</a></li>
+        <li>
+          <a href="/login">Log In</a>
+        </li>
+        <li>
+          <a class="sign-up" href="/register">Free Trial</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
