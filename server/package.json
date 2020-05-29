@@ -69,11 +69,9 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
     "mocha": "^7.1.2",
-    "mongodb-memory-server": "^6.5.2",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.1",
     "pm2": "^2.10.4",
-    "supertest": "^4.0.2",
     "webpack-cli": "^3.3.11"
   }
 }

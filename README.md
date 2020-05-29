@@ -14,7 +14,7 @@ Inside `/client` install all dependencies and start the frontend:
 npm i && npm start
 ```
 
-Now just open [localhost:3000](http://localhost:3000) to visit the frontend, or query the server endpoints directly at [localhost:5000](http://localhost:5000).
+Now just open [localhost:80](http://localhost:80) to visit the frontend, or query the server endpoints directly at [localhost:5000](http://localhost:5000).
 
 # Environment Variables
 
