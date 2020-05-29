@@ -1,0 +1,8 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 225 165.3" style="enable-background:new 0 0 225 165.3;" xml:space="preserve">
+<path class="message-path-1" d="M62.5,32.5v-24c0-3.3,2.7-6,6-6h148c3.3,0,6,2.7,6,6v75.3v22.7v25l-45.4-19h-14.6"></path>
+<path class="message-path-2" d="M156.5,142.5H47.9l-45.4,19v-25c0,0,0,0,0,0v-98c0-3.3,2.7-6,6-6h148c3.3,0,6,2.7,6,6v98
+              C162.5,139.8,159.8,142.5,156.5,142.5z"></path>
+<path class="message-path-3 animat-rot1 animat-rotate3dxin1" d="M32.7,65.5h38.9" style="opacity: 1;" data-svg-origin="32.70000076293945 65.5" transform="matrix(1,0,0,1,0,0)"></path>
+<line class="message-path-3 animat-rot2 animat-rotate3dxin2" x1="111.7" y1="85.5" x2="32.7" y2="85.5" style="opacity: 1;" data-svg-origin="32.70000076293945 85.5" transform="matrix(1,0,0,1,0,0)"></line>
+<line class="message-path-3 animat-rot3 animat-rotate3dxin3" x1="32.7" y1="105.5" x2="72.2" y2="105.5" style="opacity: 1;" data-svg-origin="32.70000076293945 105.5" transform="matrix(1,0,0,1,0,0)"></line>
+</svg>

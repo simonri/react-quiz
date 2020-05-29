@@ -1,0 +1,14 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 158.3 165" style="enable-background:new 0 0 158.3 165" xml:space="preserve">
+  <path class="quote-path-1" d="M25.8,19.7V8.5c0-3.3,2.7-6,6-6h118c3.3,0,6,2.7,6,6v148c0,3.3-2.7,6-6,6h-118c-3.3,0-6-2.7-6-6V64.8"/>
+  <g>
+    <path class="quote-path-2" d="M69,22.3c3.3,0,6,2.7,6,6v28c0,3.3-2.7,6-6,6H11c-3.3,0-6-2.7-6-6v-28c0-3.3,2.7-6,6-6H69 M69,17.3H11c-6.1,0-11,4.9-11,11v28c0,6.1,4.9,11,11,11h58c6.1,0,11-4.9,11-11v-28C80,22.3,75.1,17.3,69,17.3L69,17.3z"/>
+  </g>
+  <path class="quote-path-3 animat-rotate3f1" d="M49.2,95.6h38.9" style="opacity:1"/>
+  <path class="quote-path-3 animat-rotate3f2" d="M103.2,115.3h25.7" style="opacity:1"/>
+  <path class="quote-path-3 animat-rotate3f3" d="M103.2,131.3h25.7" style="opacity:1"/>
+  <path class="quote-path-3 animat-rotate3f2" d="M49.2,115.3h38.9" style="opacity:1"/>
+  <path class="quote-path-3 animat-rotate3f3" d="M49.2,131.3h38.9" style="opacity:1"/>
+  <g>
+    <path class="quote-path-4" d="M125,77.3c0.6,0,1,0.4,1,1v18c0,0.6-0.4,1-1,1h-18c-0.6,0-1-0.4-1-1v-18c0-0.6,0.4-1,1-1H125 M125,72.3h-18c-3.3,0-6,2.7-6,6v18c0,3.3,2.7,6,6,6h18c3.3,0,6-2.7,6-6v-18C131,75,128.3,72.3,125,72.3L125,72.3z" />
+  </g>
+</svg>

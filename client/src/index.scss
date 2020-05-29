@@ -1,0 +1,43 @@
+body {
+  padding-top: 100px;
+  background: #f0f0f0;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.page {
+  padding: 36px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background: #ffffff;
+}
+
+.question {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 20px 24px 30px 24px;
+}
+
+.tag-container,
+.quiz-result-filter {
+  display: none !important;
+}
+
+.card-title {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.quizzes .card {
+  margin-top: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+h3 {
+  margin: 0 !important;
+}

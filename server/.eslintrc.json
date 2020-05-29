@@ -1,0 +1,42 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "globals": {},
+  "plugins": [
+    "babel",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": "off",
+    "default-case": "error",
+    "eqeqeq": ["error", "always", {"null": "ignore"}],
+    "no-useless-return": "error",
+    "prettier/prettier": "error",
+    "no-unused-vars": ["error", {
+      "varsIgnorePattern": "_{1}(?!_)[a-zA-Z_$][0-9a-zA-Z_$]*",
+      "argsIgnorePattern": "_{1}(?!_)[a-zA-Z_$][0-9a-zA-Z_$]*"
+    }]
+  },
+  "overrides": [
+    {
+      "files": ["test/**/*.js"],
+      "globals": {
+        "expect": true,
+        "cleanup": true
+      }
+    }
+  ]
+}
