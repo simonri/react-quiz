@@ -16,22 +16,6 @@ npm i && npm start
 
 Now just open [localhost:3000](http://localhost:3000) to visit the frontend, or query the server endpoints directly at [localhost:5000](http://localhost:5000).
 
-# Scripts
-
-## Running
-
-Run the frontend server:
-
-```
-cd client && npm start
-```
-
-Run the backend server:
-
-```
-cd server && npm run dev
-```
-
 # Environment Variables
 
 These reside in the `/server/.env` file, which is not checked into git. **Note:** The app will crash without these variables defined.
@@ -45,17 +29,14 @@ These reside in the `/server/.env` file, which is not checked into git. **Note:*
 
 ## Backend Dependencies
 
-- BcryptJS
-- Cors
-- Dotenv
 - Express
+- BcryptJS
+- Dotenv
 - JSON Web Token (JWT)
 - Mongoose
 - Axios
 
 ## Frontend Dependencies
 
-- React Redux
+- React.js
 - Reactstrap
-- History
-- Redux
