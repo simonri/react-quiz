@@ -45,7 +45,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "prettier": "^1.19.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "request": "^2.88.0",
     "sec-api": "^1.0.7",
     "validator": "^12.2.0",
